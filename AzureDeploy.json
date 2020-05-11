@@ -5,9 +5,9 @@
     "vmName": {
        "type": "string",
        "metadata": {
-          "description": "Name of VM-Series FW in the Azure portal"
+          "description": "Seqirus North South PA1"
        },
-       "defaultValue": "VM-FW1"
+       "defaultValue": "seq-sis-pan-azurens-01"
     },
     "storageAccountName": {
       "type": "string",
@@ -17,7 +17,7 @@
     },
     "storageAccountExistingRG": {
        "type": "string",
-       "defaultValue" : "",
+       "defaultValue" : "rg-itservices-extsvcs-mgmt-001",
        "metadata": {
           "description": "Storage Accounts Resource Group."
        }
@@ -25,9 +25,9 @@
     "fwAvSet": {
        "type": "string",
        "metadata": {
-          "description": "EXISTING Availability Set name for Firewalls"
+          "description": "North South Availabilty set"
        },
-       "defaultValue": "AS-FW"
+       "defaultValue": "as-itservices-palo-mgmt-001"
     },
     "vmSize": {
        "type": "string",
@@ -43,7 +43,7 @@
        "metadata": {
           "description": "Azure VM size for VM-Series"
        },
-       "defaultValue": "Standard_D3_v2"
+       "defaultValue": "Standard_DS3_v2"
     },
     "imageVersion": {
        "type": "string",
@@ -54,7 +54,7 @@
        "metadata": {
           "description": "PAN OS Version"
        },
-       "defaultValue": "7.1.1"
+       "defaultValue": "8.1.0"
     },
     "imageSku": {
        "type": "string",
@@ -71,83 +71,83 @@
     "virtualNetworkName": { 
       "type": "string",
       "metadata": {
-        "description": "Name of the EXISTING Virtual Network (VNET)"
+        "description": "Mgmt VNET"
       },
-      "defaultValue": "fwVNET"
+      "defaultValue": "vnet-mgmt-eastus"
     },
     "virtualNetworkAddressPrefix": {
       "type": "string",
-      "defaultValue": "192.168.0.0/16",
+      "defaultValue": "10.101.0.0/16",
       "metadata": {
         "description": "EXISTING Virtual network address CIDR"
       }
     },
     "virtualNetworkExistingRGName": {
       "type": "string",
-      "defaultValue": "",
+      "defaultValue": "rg-itservices-extsvcs-mgmt-001",
       "metadata": {
-        "description": "Name of resource group of EXISTING VNET"
+        "description": "External Service Resourse Group"
       }
     },
     "subnet0Name": {
       "type": "string",
       "defaultValue": "Mgmt",
       "metadata": {
-        "description": "EXISTING Subnet for Management"
+        "description": "NS Management"
       }
     },
     "subnet1Name": {
       "type": "string",
       "defaultValue": "Untrust",
       "metadata": {
-        "description": "EXISTING Subnet for Untrust"
+        "description": "NS Untrust"
       }
     },
     "subnet2Name": {
       "type": "string",
       "defaultValue": "Trust",
       "metadata": {
-        "description": "EXISTING Subnet for Trust"
+        "description": "NS Trust"
       }
     },
     "subnet0Prefix": {
       "type": "string",
-      "defaultValue": "192.168.0.0/24",
+      "defaultValue": "10.101.0.0/27",
       "metadata": {
-        "description": "EXISTING Mgmt subnet CIDR"
+        "description": "NS Mgmt subnet CIDR"
       }
     },
     "subnet1Prefix": {
       "type": "string",
-      "defaultValue": "192.168.1.0/24",
+      "defaultValue": "10.101.0.64/27",
       "metadata": {
-        "description": "EXISTING Untrust subnet CIDR"
+        "description": "NS Untrust subnet CIDR"
       }
     },
     "subnet2Prefix": {
       "type": "string",
-      "defaultValue": "192.168.2.0/24",
+      "defaultValue": "10.101.0.32/27",
       "metadata": {
-        "description": "EXISTING Trust subnet CIDR"
+        "description": "NS Trust subnet CIDR"
       }
     },
     "subnet0Address": {
       "type": "string",
-      "defaultValue": "192.168.0.4",
+      "defaultValue": "10.101.0.4",
       "metadata": {
         "description": "Mgmt subnet static address"
       }
     },
     "subnet1Address": {
       "type": "string",
-      "defaultValue": "192.168.1.4",
+      "defaultValue": "10.101.0.68",
       "metadata": {
         "description": "Untrust subnet static address"
       }
     },
     "subnet2Address": {
       "type": "string",
-      "defaultValue": "192.168.2.4",
+      "defaultValue": "10.101.0.36",
       "metadata": {
         "description": "Trust subnet static address"
       }
@@ -160,7 +160,7 @@
     },
     "adminPassword": {
       "type": "securestring",
-      "defaultValue": "",
+      "defaultValue": "$ecr#Tf0r@7046",
       "metadata": {
         "description": "Password for the administrator account of VM-Series"
       }
@@ -173,7 +173,7 @@
     },
     "nsgName": {
       "type": "string",
-      "defaultValue": "DefaultNSG",
+      "defaultValue": "Nsg-North-South-fw-Mgmt",
       "metadata": {
         "description": "Name of existing Network Security Group for MGMT FW interface"
       }
@@ -362,3 +362,4 @@
     }    
   ]
 }
+    
